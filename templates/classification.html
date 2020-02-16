@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="static/img/favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- internal css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fondamento&display=swap" rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+    
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+    <title>GA Acccident Analysis</title>
+  </head>
+  <body>
+      <section class="header">        
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">                    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="icon">G7</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Regression</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Classifiaction<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">References</a>
+                </li>
+              </ul>
+            </div>
+          </nav>   
+        </div>
+      </section>
+
+      <section class="violine">
+        <div class="container">
+            <h2>Predicting Severity</h2>
+            <h5>
+              Let's understand the dataset and why particular features are more important when it comes to predicting Severity...
+              <br>
+              <br>              
+              <ul>
+                <li><strong>Severity</strong> - Shows the severity of the accident, a number between 1 and 4, where 1 indicates the least impact on traffic (i.e., short delay as a result of the accident) and 4 indicates a significant impact on traffic (i.e., long delay).</li>
+                <br>
+                <li><strong>Accident Location</strong> - Accident Location in current dataset - such as Lat-Lon, City, States - are very important while predicting the Severity.
+                   Accident happend in parking lot won't have any impact on-going traffic; whereas if it its on interstate-highway then it will have significant impact on traffic.
+                </li>
+                <br>
+                <li><strong>Time Duration(min)</strong> - Is a difference between Start & End Time of an accident - or how much time was needed to clear the traffic </li>
+                <br>
+                <li><strong>Hour</strong> - Hour tells at what time the accident occured. Again, this is very important data point as if accident happend on pick time then it will have an high impact on traffic. </li>
+                <br>
+                <li><strong>Weather</strong> - Bad weather conditions - Percipitation, Wind, Temprature etc - will increase the probability of accidents </li>
+                <br>
+                <li><strong>Day</strong> - Weeday or Weekend matters, as on Weekends there won't be much traffic on roads </li>
+                <br>
+                <li><strong>TMC</strong> - A traffic accident may have a Traffic Message Channel (TMC) code which provides more detailed description of the event.</li>
+                <br>
+                <li><strong>Other Data Points</strong> - Traffic Signals, Stop Signs, Roundabouts etc may have some co-relation with Severity. e.g. Accidents at Roundabouts may have less severity than accidents at Traffic Signals.</li>
+              </ul>
+            </h5>
+        </div>
+      </section>
+
+      <div class="container">
+        <hr>
+        <br>
+        <br>
+      </div>
+      
+
+      <section class="model">
+        <div class="container">          
+            <div class="col col-lg-12">                
+                <img src="static/img/1.PNG" />
+                <img src="static/img/2.PNG" />
+                <img src="static/img/3.PNG" />
+                <img src="static/img/4.PNG" />
+                <img src="static/img/5.PNG" />
+                <img src="static/img/6.PNG" />                
+7               <img src="static/img/7.PNG" /> 
+                <img src="static/img/8.PNG" /> 
+                <img src="static/img/9.PNG" /> 
+                <img src="static/img/10.PNG" /> 
+                <img src="static/img/11.PNG" /> 
+                <img src="static/img/12.PNG" /> 
+                <img src="static/img/13.PNG" /> 
+                <img src="static/img/14.PNG" /> 
+                <img src="static/img/15.PNG" /> 
+                <img src="static/img/16.PNG" /> 
+                <img src="static/img/17.PNG" /> 
+                <img src="static/img/18.PNG" /> 
+                <img src="static/img/19.PNG" /> 
+                <img src="static/img/20.PNG" /> 
+                <img src="static/img/21.PNG" /> 
+                <img src="static/img/22.PNG" /> 
+                <img src="static/img/23.PNG" /> 
+                <img src="static/img/24.PNG" /> 
+                <img src="static/img/25.PNG" /> 
+                <img src="static/img/26.PNG" /> 
+                <img src="static/img/27.PNG" /> 
+            </div>            
+        </div>
+      </section>
+
+      <div class="container">
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+      </div>
+
+      <section class="inputs">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <form method="POST">
+                <div class="form-group row">
+                  <label for="City" class="col-sm-6 col-form-label">City</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="City" name="City">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Start_Lat" class="col-sm-6 col-form-label">Start_Lat</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="Start_Lat" name="Start_Lat">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Start_Lng" class="col-sm-6 col-form-label">Start_Lng</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="Start_Lng" name="Start_Lng">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Traffic_Signal" class="col-sm-6 col-form-label">Traffic_Signal</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="Traffic_Signal" name="Traffic_Signal">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="TMC" class="col-sm-6 col-form-label">TMC</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="TMC" name="TMC">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Temprature" class="col-sm-6 col-form-label">Temprature(F)</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="Temprature" name="Temprature">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Wind_Chill" class="col-sm-6 col-form-label">Wind_Chill(F)</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="Wind_Chill" name="Wind_Chill">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Humidity" class="col-sm-6 col-form-label">Humidity(%)</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="Humidity" name="Humidity">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Pressure" class="col-sm-6 col-form-label">Pressure(in)</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="Pressure" name="Pressure">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Wind_Speed" class="col-sm-6 col-form-label">Wind_Speed(mph)</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="Wind_Speed" name="Wind_Speed">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Hour" class="col-sm-6 col-form-label">Hour</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="Hour" name="Hour">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Weekday" class="col-sm-6 col-form-label">Weekday</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="Weekday" name="Weekday">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Time_Duration" class="col-sm-6 col-form-label">Time_Duration(min)</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="Time_Duration" name="Time_Duration">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-10">
+                    <button style="width: 100%; margin-left: 10%;" type="submit" class="btn btn-dark">Get Severity</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-9">
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="footer">
+        <div class="container">
+          <h6>Group 7 © No Copyrights whatsoever..We are happy if we are useful by anyway..Happy Coding!</h6>
+        </div>
+      </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+    <!--<script type="text/javascript" src="static/js/leaflet.extra-markers.min.js"></script>-->
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <!-- Leaflet heatmap plugin-->
+    <!--<script type="text/javascript" src="static/js/leaflet-heat.js"></script>-->
+    <!-- API key -->
+    <!--<script type="text/javascript" src="static/js/config.js"></script>-->
+
+    <!-- D3 JS Files -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- https://stackoverflow.com/questions/24989128/why-is-my-d3-tip-not-working -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+
+    <script src="static/js/classificationMain.js"></script>    
+    <script src="static/js/violinePlot.js"></script>
+
+  </body>
+</html>
